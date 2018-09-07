@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 
 # 리스트 표시
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'blog/post_list.html', {'posts' : posts})
 
 # 포스트 상세 보기
